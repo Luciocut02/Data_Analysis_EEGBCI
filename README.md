@@ -1,6 +1,6 @@
 # Data_Analysis_EEGBCI
 Analysis and classification of data for thesis
-Step da seguire per i codici MatLab
+Step da seguire per i codici MatLab-->Runnare i codici seguendo il seguente ordine (tranne che per le funzioni):
 Analisi,estrazione,addestramento e classificazione di dati senza rumore (filtrati)
 feature_freq_time_domain1_1-->funzione per estrazione caratteristiche inter-sessione 80-20%
 feature_freq_time_domain2_1-->funzione per estrazione caratteristiche inter-sessione 60-40%
