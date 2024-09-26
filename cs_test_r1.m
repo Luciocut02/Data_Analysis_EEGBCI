@@ -39,7 +39,11 @@ for sub=1:25
     data_test1=normalize(features_sogg_20cs1,'zscore');
     data_test2=normalize(features_sogg_20cs2,'zscore');
     data_test3=normalize(features_sogg_20cs3,'zscore');
-    
+    NaN_columns1=any(isnan(data_train), 1);
+    data_train=data_train(:, ~NaN_columns1);
+    data_test1=data_test1(:, ~NaN_columns1);
+    data_test2=data_test2(:, ~NaN_columns1);
+    data_test3=data_test3(:, ~NaN_columns1);
     tic;
     modello=fitcsvm(data_train,l1_1,'KernelFunction','polynomial','OptimizeHyperparameters','auto');
     close all
