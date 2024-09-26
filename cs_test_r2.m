@@ -60,27 +60,35 @@ for sub=1:25
    
 
     data_train=normalize(a_a,'zscore');
-    data_test1=normalize(features_sogg40cs1,'zscore');
-    data_test2=normalize(features_sogg40cs2,'zscore');
-    data_test3=normalize(features_sogg40cs3,'zscore');
+    data_test1=normalize(features_sogg_40cs1,'zscore');
+    data_test2=normalize(features_sogg_40cs2,'zscore');
+    data_test3=normalize(features_sogg_40cs3,'zscore');
+     NaN_columns1=any(isnan(data_train), 1);
+    data_train=data_train(:, ~NaN_columns1);
+    data_test1=data_test1(:, ~NaN_columns1);
+    data_test2=data_test2(:, ~NaN_columns1);
+    data_test3=data_test3(:, ~NaN_columns1);
     tic;
     modello=fitcsvm(data_train,l1_1,'KernelFunction','polynomial','OptimizeHyperparameters','auto');
+    close all
     time_train2(sub,1)=toc;
     predizioni1=predict(modello,data_test1);
     predizioni2=predict(modello,data_test2);
     predizioni3=predict(modello,data_test3);
     tic;
     modello2=fitcnet(data_train,l1_1,'OptimizeHyperparameters','auto');
+    close all
     time_train2(sub,2)=toc;
     predizioni4=predict(modello2,data_test1);
     predizioni5=predict(modello2,data_test2);
     predizioni6=predict(modello2,data_test3);
     tic;
     modello3=fitcensemble(a_a,l1_1,'OptimizeHyperparameters','auto');
+    close all
     time_train2(sub,3)=toc;
-    predizioni7=predict(modello3,feature_sogg40cs1);
-    predizioni8=predict(modello3,feature_sogg40cs2);
-    predizioni9=predict(modello3,feature_sogg40cs3);
+    predizioni7=predict(modello3,features_sogg_40cs1);
+    predizioni8=predict(modello3,features_sogg_40cs2);
+    predizioni9=predict(modello3,features_sogg_40cs3);
 
     accuracy_60_40cs1(sub,1)=sum(predizioni1==l2_2)/length(l2_2)*100;
     accuracy_60_40cs2(sub,1)=sum(predizioni2==l2_2)/length(l2_2)*100;
