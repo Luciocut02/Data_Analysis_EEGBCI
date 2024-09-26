@@ -3,7 +3,7 @@ load('noise_data.mat')
 load('noise_data2.mat')
 load('noise_data3.mat')
 featureStruct4_1r2= struct();
-for s = 17:25
+for s = 1:25
     for se =1:5
         if s < 10
             fileName=sprintf('sub-00%d_ses-0%d_task_motorimagery_eeg.mat', s, se);
