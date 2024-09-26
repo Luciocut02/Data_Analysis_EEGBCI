@@ -97,9 +97,14 @@ for sub=1:25
     features_sogg_80cs3(size(r_r3,1)+size(q_q3,1)+size(q_q2,1)+size(r_r2,1)+size(q_q1,1)+size(r_r1,1)+size(q_q,1)+1:size(r_r,1)+size(r_r3,1)+size(q_q3,1)+size(q_q2,1)+size(r_r2,1)+size(q_q1,1)+size(r_r1,1)+size(q_q,1),:)=r_r(1:size(r_r,1),:);
 
     data_train=normalize(a_a,'zscore');
-    data_test1=normalize(features_sogg80cs1,'zscore');
-    data_test2=normalize(features_sogg80cs2,'zscore');
-    data_test3=normalize(features_sogg80cs3,'zscore');
+    data_test1=normalize(features_sogg_80cs1,'zscore');
+    data_test2=normalize(features_sogg_80cs2,'zscore');
+    data_test3=normalize(features_sogg_80cs3,'zscore');
+     NaN_columns1=any(isnan(data_train), 1);
+    data_train=data_train(:, ~NaN_columns1);
+    data_test1=data_test1(:, ~NaN_columns1);
+    data_test2=data_test2(:, ~NaN_columns1);
+    data_test3=data_test3(:, ~NaN_columns1);
     tic;
     modello=fitcsvm(data_train,l1_1,'KernelFunction','polynomial','OptimizeHyperparameters','auto');
     time_train4(sub,1)=toc;
@@ -115,9 +120,9 @@ for sub=1:25
     tic;
     modello3=fitcensemble(a_a,l1_1,'OptimizeHyperparameters','auto');
     time_train4(sub,3)=toc;
-    predizioni7=predict(modello3,feature_sogg80cs1);
-    predizioni8=predict(modello3,feature_sogg80cs2);
-    predizioni9=predict(modello3,feature_sogg80cs3);
+    predizioni7=predict(modello3,features_sogg_80cs1);
+    predizioni8=predict(modello3,features_sogg_80cs2);
+    predizioni9=predict(modello3,features_sogg_80cs3);
 
     accuracy_20_80cs1(sub,1)=sum(predizioni1==l2_2)/length(l2_2)*100;
     accuracy_20_80cs2(sub,1)=sum(predizioni2==l2_2)/length(l2_2)*100;
