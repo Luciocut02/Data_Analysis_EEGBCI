@@ -1,4 +1,4 @@
-function [feature_sogg_40pc,feature_sogg_60pc,time_extraction_feature3_1] = feature_freq_time_domain3_1(data,labels)
+function [feature_sogg_40pc,feature_sogg_60pc,time_extraction_feature3_1] = feature_freq_time_domain3_1r(data,labels)
 tic;   
 fc=250; %Hz
 vv=round(0.4*size(data,1));
