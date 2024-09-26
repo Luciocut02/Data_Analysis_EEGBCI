@@ -88,18 +88,21 @@ for sub=1:25
     data_test3=data_test3(:, ~NaN_columns1);
     tic;
     modello=fitcsvm(data_train,l1_1,'KernelFunction','polynomial','OptimizeHyperparameters','auto');
+    close all
     time_train3(sub,1)=toc;
     predizioni1=predict(modello,data_test1);
     predizioni2=predict(modello,data_test2);
     predizioni3=predict(modello,data_test3);
     tic;
     modello2=fitcnet(data_train,l1_1,'OptimizeHyperparameters','auto');
+    close all
     time_train3(sub,2)=toc;
     predizioni4=predict(modello2,data_test1);
     predizioni5=predict(modello2,data_test2);
     predizioni6=predict(modello2,data_test3);
     tic;
     modello3=fitcensemble(a_a,l1_1,'OptimizeHyperparameters','auto');
+    close all
     time_train3(sub,3)=toc;
     predizioni7=predict(modello3,features_sogg_60cs1);
     predizioni8=predict(modello3,features_sogg_60cs2);
