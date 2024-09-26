@@ -22,14 +22,14 @@ rappresentazione_risultati_ws-->rappresentazione risultati classificazione inter
 rappresentazione_risultati_cs-->rappresentazione risultati classificazione cross-session (grafici a barre,boxplot e subplot)
 Analisi,estrazione,addestramento e classificazione di dati con rumore
 noise_matrix-->aggiunta di rumore ai dati
-feature_freq_time_domain1_1-->funzione per estrazione caratteristiche inter-sessione 80-20%
-feature_freq_time_domain2_1-->funzione per estrazione caratteristiche inter-sessione 60-40%
-feature_freq_time_domain3_1-->funzione per estrazione caratteristiche inter-sessione 40-60%
-feature_freq_time_domain4_1-->funzione per estrazione caratteristiche inter-sessione 20-80%
-applicazione_funzione1_1--> estrazione caratteristiche e classificazione inter-sessione 80-20%
-applicazione_funzione2_1--> estrazione caratteristiche e classificazione inter-sessione 60-40%
-applicazione_funzione3_1--> estrazione caratteristiche e classificazione inter-sessione 40-60%
-applicazione_funzione4_1--> estrazione caratteristiche e classificazione inter-sessione 20-80%
+feature_freq_time_domain1_1r-->funzione per estrazione caratteristiche inter-sessione 80-20%
+feature_freq_time_domain2_1r-->funzione per estrazione caratteristiche inter-sessione 60-40%
+feature_freq_time_domain3_1r-->funzione per estrazione caratteristiche inter-sessione 40-60%
+feature_freq_time_domain4_1r-->funzione per estrazione caratteristiche inter-sessione 20-80%
+applicazione_funzione1_1r--> estrazione caratteristiche e classificazione inter-sessione 80-20%
+applicazione_funzione2_1r--> estrazione caratteristiche e classificazione inter-sessione 60-40%
+applicazione_funzione3_1r--> estrazione caratteristiche e classificazione inter-sessione 40-60%
+applicazione_funzione4_1r--> estrazione caratteristiche e classificazione inter-sessione 20-80%
 cs_80_20_r_r1--> estrazione caratteristiche e classificazione cross-session 80-20%
 cs_60_40_r_r2--> estrazione caratteristiche e classificazione cross-session 60-40%
 cs_40_60_r_r3--> estrazione caratteristiche e classificazione cross-session 40-60%
