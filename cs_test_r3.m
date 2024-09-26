@@ -78,9 +78,14 @@ for sub=1:25
    
 
     data_train=normalize(a_a,'zscore');
-    data_test1=normalize(features_sogg60cs1,'zscore');
-    data_test2=normalize(features_sogg60cs2,'zscore');
-    data_test3=normalize(features_sogg60cs3,'zscore');
+    data_test1=normalize(features_sogg_60cs1,'zscore');
+    data_test2=normalize(features_sogg_60cs2,'zscore');
+    data_test3=normalize(features_sogg_60cs3,'zscore');
+     NaN_columns1=any(isnan(data_train), 1);
+    data_train=data_train(:, ~NaN_columns1);
+    data_test1=data_test1(:, ~NaN_columns1);
+    data_test2=data_test2(:, ~NaN_columns1);
+    data_test3=data_test3(:, ~NaN_columns1);
     tic;
     modello=fitcsvm(data_train,l1_1,'KernelFunction','polynomial','OptimizeHyperparameters','auto');
     time_train3(sub,1)=toc;
@@ -96,9 +101,9 @@ for sub=1:25
     tic;
     modello3=fitcensemble(a_a,l1_1,'OptimizeHyperparameters','auto');
     time_train3(sub,3)=toc;
-    predizioni7=predict(modello3,feature_sogg60cs1);
-    predizioni8=predict(modello3,feature_sogg60cs2);
-    predizioni9=predict(modello3,feature_sogg60cs3);
+    predizioni7=predict(modello3,features_sogg_60cs1);
+    predizioni8=predict(modello3,features_sogg_60cs2);
+    predizioni9=predict(modello3,features_sogg_60cs3);
 
     accuracy_40_60cs1(sub,1)=sum(predizioni1==l2_2)/length(l2_2)*100;
     accuracy_40_60cs2(sub,1)=sum(predizioni2==l2_2)/length(l2_2)*100;
