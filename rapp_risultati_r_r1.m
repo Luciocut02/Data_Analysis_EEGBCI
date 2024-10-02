@@ -1,11 +1,4 @@
-save('results1wsr1.mat','accuracy_80_20def2_1','time_matrix_train_80_20def2_1','time_matrix_predict_80_20def2_1');
-save('results2wsr1.mat','accuracy_60_40def2_1','time_matrix_train_60_40def2_1','time_matrix_predict_60_40def2_1');
-save('results3wsr1.mat','accuracy_40_60def2_1','time_matrix_train_40_60def2_1','time_matrix_predict_40_60def2_1');
-save('results4wsr1.mat','accuracy_20_80def2_1','time_matrix_train_20_80def2_1','time_matrix_predict_20_80def2_1');
-save('results1wsr1_1.mat',' precision1_80_20def2_1',' precision2_80_20def2_1','recall1_80_20def2_1',' recall2_80_20def2_1');
-save('results2wsr1_1.mat',' precision1_60_40def2_1',' precision2_60_40def2_1','recall1_60_40def2_1',' recall2_60_40def2_1');
-save('results3wsr1_1.mat',' precision1_40_60def2_1',' precision2_40_60def2_1','recall1_40_60def2_1',' recall2_40_60def2_1');
-save('results4wsr1_1.mat',' precision1_20_80def2_1',' precision2_20_80def2_1','recall1_20_80def2_1',' recall2_20_80def2_1');
+
 for sub=1:25
         for cl=1:3
         [val,idx]=sort(accuracy_80_20_1_1(sub,1:5,cl),'descend');
